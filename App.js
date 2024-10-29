@@ -3,18 +3,20 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>HELLO guys !!!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.mainView}>
+      <View style={{backgroundColor:'red',width:'100%'}}>
+        <Text>This is my view 1</Text>
+      </View>
+      <View>
+        <Text>This is my view 2</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  mainView:{
+    paddingTop:50,
+    backgroundColor:'red'
+  }
+})
