@@ -3,20 +3,31 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.mainView}>
-      <View style={{backgroundColor:'red',width:'100%'}}>
-        <Text>This is my view 1</Text>
-      </View>
-      <View>
-        <Text>This is my view 2</Text>
-      </View>
+    <View style={styles.container}>
+      <View style={styles.one}><Text>One</Text></View>
+      <View style={styles.two}><Text>Two</Text></View>
+      <View style={styles.three}><Text>Three</Text></View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  mainView:{
+  container:{
     paddingTop:50,
-    backgroundColor:'red'
+    flexDirection:'row',
+    justifyContent:'space-evenly',
+    alignItems:'strech',
+    height:200
+  },
+  one:{
+    flex:2,
+    borderWidth:1
+  },
+  two:{
+    flex:1,
+    borderWidth:1
+  },
+  three:{
+    borderWidth:1
   }
 })
