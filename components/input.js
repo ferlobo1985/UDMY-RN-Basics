@@ -14,6 +14,11 @@ export default function InputComp(){
                 value={myInput}
                 style={styles.input}
                 onChangeText={(e)=>onChangeInput(e)}
+                multiline={true}
+                maxLength={5}
+                // editable={false}
+                placeholder="Enter your name"
+                keyboardType="number-pad"
             />
         </View>
     )
