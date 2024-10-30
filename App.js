@@ -4,14 +4,15 @@ import { useState } from 'react';
 
 /// COMPONENTS
 import Nav from './components/nav';
-import PressComp from './components/pressComp';
+// import PressComp from './components/pressComp';
+import InputComp from './components/input';
 
 export default function App() {
   return (
     <View style={styles.container}>
         <Nav nameOfApp="Awesome App"/>
         <View>
-          <PressComp/>
+          <InputComp/>
         </View>
     </View>
   );
