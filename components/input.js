@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Text, View, StyleSheet, TextInput, Button, ScrollView } from "react-native";
+import { Text, View, StyleSheet, TextInput, Button } from "react-native";
 
 export default function InputComp(){
     const [myInput,setMyInput] = useState('');
@@ -16,7 +16,7 @@ export default function InputComp(){
     }
 
     return(
-        <ScrollView>
+        <>
             <View>
                 <TextInput
                     value={myInput}
@@ -36,7 +36,7 @@ export default function InputComp(){
                     </Text>
                 ))}
             </View>
-        </ScrollView>
+        </>
     )
 }
 
