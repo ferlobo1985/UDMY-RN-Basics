@@ -1,33 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, Image,ImageBackground } from 'react-native';
 import { useState } from 'react';
+
+import Wave from './assets/images/Wave.jpg'
 
 /// COMPONENTS
 import Nav from './components/nav';
-// import PressComp from './components/pressComp';
-import InputComp from './components/input';
 
 export default function App() {
   return (
-    <>
-      <View style={styles.container}>
+      <View>
           <Nav nameOfApp="Awesome App"/>
-          <ActivityIndicator animating={false}/>
-          {/* <ActivityIndicator size="large" color="#0000ff"/> */}
-          <ScrollView
-            // onContentSizeChange={(w,h)=>alert(h)}
-            // onScroll={()=>alert('Scroll')}
-            // onScrollBeginDrag={()=>console.log('begin')}
-            // onScrollEndDrag={()=> console.log('end')}
-            // onMomentumScrollBegin={()=> console.log('M start')}
-            // onMomentumScrollEnd={()=> console.log('M end')}
+          <ImageBackground
+            // source={{uri:'https://picsum.photos/500/500'}}
+            source={Wave}
+            style={styles.wave}
+            resizeMode='cover'
+            onLoad={()=> console.log('Loding...')}
+            onLoadStart={()=> console.log('start loading')}
+            onLoadEnd={()=> console.log('Done loading')}
           >
-            <InputComp/>
-          </ScrollView>
+            <Text>Say something</Text>
+          </ImageBackground>
       </View>
-    </>
   );
 }
 
 const styles = StyleSheet.create({
+  wave:{
+    width:'100%',
+    height:300,
+    marginTop:20
+  }
 })
