@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, ActivityIndicator } from 'react-native';
 import { useState } from 'react';
 
 /// COMPONENTS
@@ -12,6 +12,8 @@ export default function App() {
     <>
       <View style={styles.container}>
           <Nav nameOfApp="Awesome App"/>
+          <ActivityIndicator animating={false}/>
+          {/* <ActivityIndicator size="large" color="#0000ff"/> */}
           <ScrollView
             // onContentSizeChange={(w,h)=>alert(h)}
             // onScroll={()=>alert('Scroll')}
