@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     paddingTop:50,
     flexDirection:'row',
     justifyContent:'space-evenly',
-    alignItems:'strech',
+    alignItems:'stretch',
     height:200
   },
   one:{
