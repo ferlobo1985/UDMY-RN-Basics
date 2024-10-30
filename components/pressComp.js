@@ -1,19 +1,33 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Pressable } from "react-native";
 
 export default function PressComp(){
     return(
-        <View style={styles.generate}>
-            <Text style={{color:'#fff'}}>
-                Add Number
-            </Text>
+        <View>
+            <Pressable
+                onPress={()=> console.log('Pressed')}
+                // android_ripple={{
+                //     color:'red',
+                //     radius:200
+                // }}
+                style={({pressed})=>[
+                    pressed ? styles.pressed:styles.notPressed,
+                    styles.pressable
+                ]}
+            >
+                <Text style={{color:'#000'}}>
+                    Add Number
+                </Text>
+            </Pressable>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    generate:{
-        backgroundColor:'#00BCD4',
+    pressable:{
+        width:'100%',
         padding:10,
         alignItems:'center'
-    }
+    },
+    notPressed:{backgroundColor:'#454545'},
+    pressed:{backgroundColor:'#8f8f8f'}
 })
