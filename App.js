@@ -9,6 +9,7 @@ import Greeting from './components/greeting';
 export default function App() {
   const { width, height} = useWindowDimensions();
   console.log(width, height)
+  
 
   let boxSize = height > 400 ? 200:400;
   let color = height > 400 ? 
