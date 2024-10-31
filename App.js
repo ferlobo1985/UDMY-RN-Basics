@@ -1,15 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Dimensions, useWindowDimensions, ScrollView, Button } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, useWindowDimensions, ScrollView, Button, Platform } from 'react-native';
 
 /// COMPONENTS
 import Nav from './components/nav';
+import Greeting from './components/greeting';
+
 
 export default function App() {
   const { width, height} = useWindowDimensions();
   console.log(width, height)
 
   let boxSize = height > 400 ? 200:400;
-  let color = height > 400 ? { backgroundColor:'yellow'}:{backgroundColor:'lightblue'}
+  let color = height > 400 ? 
+  {backgroundColor: Platform.select({ios:'yellow',android:'green'})}:{backgroundColor:'lightblue'}
   const boxStyle = [styles.box,{width:boxSize,height:boxSize},
   color];
 
@@ -27,14 +30,18 @@ export default function App() {
   (<>{button}{boxes}</>):(<>{boxes}{button}</>)
 
   return (
-      <View>
+      <>
+      <StatusBar style='dark' />
+      <View style={{flex:1}}>
           <Nav nameOfApp="Awesome App"/>
           <ScrollView>
             <View style={styles.container}>
+              <Greeting/>
               {finalBlock}
             </View>
           </ScrollView>
       </View>
+      </>
   );
 }
 
